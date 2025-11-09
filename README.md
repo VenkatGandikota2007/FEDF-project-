@@ -1,77 +1,76 @@
-🪜 Step 1: Go to your project folder
+## 🪜 Step 1: Go to your project folder
 
-In your screenshot, you typed cd proejct (spelling mistake).
+In your terminal, navigate to the project directory:
 
-Correct it like this:
-
+```bash
 cd project
 
-If you’re not sure what the folder name is, check by listing the contents:
+## If you're not sure about the folder name, list all files first:
 
+bash
 dir
 
-Look for the real folder name — maybe it’s project, my-project, or something else — and then use that exact name:
+## Then, find the correct folder name (e.g., project, my-project) and run:
 
+bash
 cd "exact-folder-name"
 
-🧰 Step 2: Make sure Node.js and npm are installed
+## 🧰 Step 2: Make sure Node.js and npm are installed
+   Check if Node.js and npm are available:
 
-Check the versions:
-
+bash
 node -v
 npm -v
 
+## If both commands show version numbers (e.g., v18.19.0), you’re ready ✅
+## If not, download and install the LTS version from https://nodejs.org.
 
-If both show version numbers (like v18.19.0 or similar), you’re good ✅
-If not, go to https://nodejs.org
- and install the LTS version.
+## ⚙️ Step 3: Install dependencies
+   Once you’re inside your project folder (where package.json exists), install all dependencies:
 
-⚙️ Step 3: Install dependencies
-
-Once you’re inside your project folder (where you can see a package.json file when you run dir), install all dependencies:
-
+bash
 npm install
 
+## This will create a node_modules folder and install everything needed.
 
-This command will download everything listed in your package.json and create a node_modules folder.
+## If you face any issues, try cleaning and reinstalling:
 
-If you get any errors, try cleaning and reinstalling:
-
+bash
 rm -r node_modules
 rm package-lock.json
 npm cache clean --force
 npm install
 
-🚀 Step 4: Start the development server
+## 🚀 Step 4: Start the development server
+   Run the development server using:
 
-Now start your app:
-
+bash
 npm run dev
 
+ ## If you see an error like Missing script: "dev", check available scripts:
 
-If it says “Missing script: dev”, check what scripts are available:
-
+bash
 type package.json | findstr "scripts"
 
+## Look for something like:
 
-Look for something like:
-
+json
 "scripts": {
   "dev": "vite",
   "start": "vite preview"
 }
 
+## If there's no dev script but there is a start script, use:
 
-If dev isn’t there but start is, run:
-
+bash
 npm start
 
-🌐 Step 5: Open the app
+## 🌐 Step 5: Open the app
+   Once the server starts successfully, the terminal will show something like:
 
-Once the server starts, you’ll see something like this in the terminal:
-
+arduino
 VITE v5.0.0  ready in 500ms
 ➜  Local:   http://localhost:5173/
 
+## Now open the given link (for example, http://localhost:5173/) in your web browser to view your app 🎉
 
-Open that link (http://localhost:5173/) in your web browser — your app will be live! 🎉
